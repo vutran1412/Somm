@@ -11,13 +11,18 @@ namespace InventoryManagement
         private string productName;
         private int productQuantity;
         private decimal productPrice;
+        private int productYear;
         private DateTime productRecieved = DateTime.Now;
 
         public Product() { }
 
-        public Product(string productName, int productquantity, decimal productPrice, 
+        public Product(string productName, int productquantity, decimal productPrice, int productYear,
             DateTime productRecieved)
         {
+            this.ProductName = productName;
+            this.ProductQuantity = productquantity;
+            this.ProductPrice = productPrice;
+            this.ProductYear = productYear;
 
         }
 
@@ -54,6 +59,18 @@ namespace InventoryManagement
             set
             {
                 productPrice = value;
+            }
+        }
+
+        public int ProductYear
+        {
+            get
+            {
+                return productYear;
+            }
+            set
+            {
+                productYear = value;
             }
         }
 
