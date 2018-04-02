@@ -10,12 +10,12 @@ namespace InventoryManagement
     {
         private string productName;
         private int productQuantity;
-        private double productPrice;
+        private decimal productPrice;
         private DateTime productRecieved = DateTime.Now;
 
         public Product() { }
 
-        public Product(string productName, int productquantity, double productPrice, 
+        public Product(string productName, int productquantity, decimal productPrice, 
             DateTime productRecieved)
         {
 
@@ -45,7 +45,7 @@ namespace InventoryManagement
             }
         }
 
-        public double ProductPrice
+        public decimal ProductPrice
         {
             get
             {
