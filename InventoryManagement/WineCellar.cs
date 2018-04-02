@@ -30,7 +30,7 @@ namespace InventoryManagement
             lstInventoryBox.Items.Clear();
             foreach (Product p in products)
             {
-                lstInventoryBox.Items.Add(p.GetDisplayText(" * "));
+                lstInventoryBox.Items.Add(p.GetDisplayText("\t"));
             }
         }
 
