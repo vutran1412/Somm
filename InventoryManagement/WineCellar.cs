@@ -16,5 +16,10 @@ namespace InventoryManagement
         {
             InitializeComponent();
         }
+
+        private void frmWineCellar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,6 +35,34 @@ namespace InventoryManagement
             return true;
         }
 
+        public static bool IsInt32(TextBox textBox)
+        {
+            int number = 0;
+            if (Int32.TryParse(textBox.Text, out number))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(textBox.Tag + " must be an integer. ", Title);
+                textBox.Focus();
+                return false;
+            }
+        }
+
+        public static bool IsWithinRange(TextBox textBox, int min, int max)
+        {
+            int number = Convert.ToInt32(textBox.Text);
+            if (number < min || number > max)
+            {
+                MessageBox.Show(textBox.Tag + " must be between "
+                    + min + " and " + max + ".", Title);
+                textBox.Focus();
+                return false;
+            }
+            return true;
+        }
+
         public static bool IsDecimal(TextBox textbox)
         {
             decimal number = 0m;
