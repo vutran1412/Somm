@@ -9,20 +9,21 @@ namespace InventoryManagement
     public class Product
     {
         private string productName;
-        private int productQuantity;
-        private decimal productPrice;
         private int productYear;
-        private DateTime productRecieved = DateTime.Now;
+        private decimal productPrice;
+        private int productQuantity;
+       
 
         public Product() { }
 
-        public Product(string productName, int productquantity, decimal productPrice, int productYear,
-            DateTime productRecieved)
+        public Product(string productName, int productYear, decimal productPrice, int productQuantity)
         {
             this.ProductName = productName;
-            this.ProductQuantity = productquantity;
-            this.ProductPrice = productPrice;
             this.ProductYear = productYear;
+            this.ProductPrice = productPrice;
+            this.ProductQuantity = productQuantity;
+            
+            
 
         }
 
@@ -74,23 +75,11 @@ namespace InventoryManagement
             }
         }
 
-        public DateTime ProductRecieved
-        {
-            get
-            {
-                return productRecieved;
-            }
-            set
-            {
-                productRecieved = value;
-            }
-        }
-
         public string GetDisplayText(string sep)
         {
-            return productName.ToString() + sep + productQuantity.ToString()
-                + sep + productPrice.ToString("c") 
-                + sep + productRecieved.ToString("{0:d}");
+            return productName.ToString() + sep + productYear.ToString() + sep + productPrice.ToString("c") 
+                + sep + productQuantity.ToString() + " btl";
+                
         }
     }
 
