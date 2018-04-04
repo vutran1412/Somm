@@ -30,10 +30,10 @@ namespace InventoryManagement
             listViewWine.Columns.Add("Year", 50);
             listViewWine.Columns.Add("Price", 100);
             listViewWine.Columns.Add("Quantity", 150);
-             
+
         }
 
-        private void add() { }
+        
 
         // Method to add rows of product
         private void add(String wine, String year, String price, String quantity)
@@ -52,20 +52,26 @@ namespace InventoryManagement
 
         private void frmWineCellar_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         // Sets up the add new product button, brings up a form
         private void btnAddNewProduct_Click(object sender, EventArgs e)
-        { 
+        {
             // Instantiate a new form object
             frmAddNewProduct newProductForm = new frmAddNewProduct();
             // Creates a new product object from the new form 
             Product product = newProductForm.GetNewProduct();
             // populate the listview with the product object's properties
-            
-            add(product.ProductName, product.ProductYear.ToString(), product.ProductPrice.ToString("c"), product.ProductQuantity.ToString());
+            if (product != null)
+            {
+                add(product.ProductName,
+                    product.ProductYear.ToString(),
+                    product.ProductPrice.ToString("c"),
+                    product.ProductQuantity.ToString());
+            }
         }
+    
 
         // Sets up the update product button
         private void btnUpdateProduct_Click(object sender, EventArgs e)
