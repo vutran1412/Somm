@@ -8,6 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace InventoryManagement
 {
+    // Validator class to validate user input
     public static class Validator
     {
         private static string title = "Entry Error";
@@ -23,7 +24,7 @@ namespace InventoryManagement
                 title = value;
             }
         }
-
+        // Checks for any empty fields
         public static bool IsPresent(TextBox textbox)
         {
             if (textbox.Text == "")
@@ -34,7 +35,7 @@ namespace InventoryManagement
             }
             return true;
         }
-
+        // Checks for an integer
         public static bool IsInt32(TextBox textBox)
         {
             int number = 0;
@@ -49,7 +50,7 @@ namespace InventoryManagement
                 return false;
             }
         }
-
+        // Check to see if its within range
         public static bool IsWithinRange(TextBox textBox, int min, int max)
         {
             int number = Convert.ToInt32(textBox.Text);
@@ -62,7 +63,7 @@ namespace InventoryManagement
             }
             return true;
         }
-
+        // Checks if is a decimal
         public static bool IsDecimal(TextBox textbox)
         {
             decimal number = 0m;

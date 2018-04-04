@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement
 {
+    // The Product class, this is all the information that the app will store for now
+    // Version 2.0, might include a parcount stored internally within the class
     public class Product
     {
+        // Class properties
         private string productName;
         private int productYear;
         private decimal productPrice;
         private int productQuantity;
        
-
+        // Empty constructor to allow for a null instatiation later
         public Product() { }
 
+        // OverLoaded constructor that will store the data
         public Product(string productName, int productYear, decimal productPrice, int productQuantity)
         {
             this.ProductName = productName;
@@ -27,6 +31,7 @@ namespace InventoryManagement
 
         }
 
+        // Getters and Setters
         public string ProductName
         {
             get
@@ -75,12 +80,7 @@ namespace InventoryManagement
             }
         }
 
-        public string GetDisplayText(string sep)
-        {
-            return productName.ToString() + sep + productYear.ToString() + sep + productPrice.ToString("c") 
-                + sep + productQuantity.ToString() + " btl";
-                
-        }
+        
     }
 
     

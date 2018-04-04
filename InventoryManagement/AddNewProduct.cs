@@ -17,14 +17,17 @@ namespace InventoryManagement
             InitializeComponent();
         }
 
+        // Instantiates a product object
         private Product product = null;
 
+        // Method that returns the product data to the WineCellar Form
         public Product GetNewProduct()
         {
             this.ShowDialog();
             return product;
         }
 
+        // Sets up the save button
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
             if (IsValidData())
@@ -36,7 +39,7 @@ namespace InventoryManagement
                 
             }
         }
-
+        // Method to validate data
         private bool IsValidData()
         {
             return Validator.IsPresent(txtProduct) &&
@@ -50,9 +53,11 @@ namespace InventoryManagement
                 Validator.IsDecimal(txtPrice);
         }
 
+        // Cancel button
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            product = new Product();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
