@@ -24,7 +24,7 @@ namespace InventoryManagement
         public Product GetNewProduct()
         {
             this.ShowDialog();
-            return product;
+            return product; 
         }
 
         // Sets up the save button

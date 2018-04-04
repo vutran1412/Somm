@@ -31,6 +31,39 @@ namespace InventoryManagement
             listViewWine.Columns.Add("Price", 100);
             listViewWine.Columns.Add("Quantity", 150);
 
+            checkListView();
+            
+                
+            
+
+        }
+
+        public Product ToEdit(String wine, int year, decimal price, int quantity)
+        {
+            checkListView();
+            wine = listViewWine.SelectedItems[0].SubItems[0].ToString();
+            year = Convert.ToInt32(listViewWine.SelectedItems[0].SubItems[1]);
+            price = Convert.ToDecimal(listViewWine.SelectedItems[0].SubItems[2]);
+            quantity = Convert.ToInt32(listViewWine.SelectedItems[0].SubItems[3]);
+            Product editProduct = new Product(wine, year, price, quantity);
+            this.ShowDialog();
+            return editProduct;
+        }
+
+        // Method to check if the listView is empty, to disable the Update and Delete buttons
+        private void checkListView()
+        {
+            // If the ListView is empty cannot you the Update or Delete Buttons
+            if (listViewWine.Items.Count == 0)
+            {
+                btnDeleteProduct.Enabled = false;
+                btnUpdateProduct.Enabled = false;
+            }
+            else
+            {
+                btnDeleteProduct.Enabled = true;
+                btnUpdateProduct.Enabled = true;
+            }
         }
 
         
@@ -70,12 +103,14 @@ namespace InventoryManagement
                     product.ProductPrice.ToString("c"),
                     product.ProductQuantity.ToString());
             }
+            checkListView();
         }
     
 
         // Sets up the update product button
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
+            frmUpdateProduct updatedProduct = new frmUpdateProduct();
             // User must select an existing row to edit
             int editRow;
            
