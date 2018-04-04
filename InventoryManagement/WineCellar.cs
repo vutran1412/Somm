@@ -15,6 +15,24 @@ namespace InventoryManagement
         public frmWineCellar()
         {
             InitializeComponent();
+
+            listViewWine.View = View.Details;
+            listViewWine.FullRowSelect = true;
+
+            listViewWine.Columns.Add("Wine", 150);
+            listViewWine.Columns.Add("Year", 50);
+            listViewWine.Columns.Add("Price", 100);
+            listViewWine.Columns.Add("Quantity", 150);
+             
+        }
+
+        private void add(String wine, String year, String price, String quantity)
+        {
+            String[] row = { wine, year, price, quantity };
+
+            ListViewItem item = new ListViewItem(row);
+
+            listViewWine.Items.Add(item);
         }
 
         private List<Product> products = new List<Product>();
@@ -22,49 +40,58 @@ namespace InventoryManagement
 
         private void frmWineCellar_Load(object sender, EventArgs e)
         {
-            FillProductListBox();
+            
         }
 
-        private void FillProductListBox()
-        {
-            lstInventoryBox.Items.Clear();
-            foreach (Product p in products)
-            {
-                lstInventoryBox.Items.Add(p.GetDisplayText("\t"));
-            }
-        }
 
         private void btnAddNewProduct_Click(object sender, EventArgs e)
         {
             frmAddNewProduct newProductForm = new frmAddNewProduct();
             Product product = newProductForm.GetNewProduct();
-            if (product != null)
+
+            add(product.ProductName, product.ProductYear.ToString(), product.ProductPrice.ToString("c"), product.ProductQuantity.ToString());
+        }
+
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void update()
+        {
+            int editRow = listViewWine.SelectedIndices[0];
+
+            if (editRow == -1)
             {
-                products.Add(product);
-                FillProductListBox();
+                MessageBox.Show("Please select a product to edit");
+            } else
+            {
+                String input = Microsoft.VisualBasic.Interaction.InputBox("Update Quantity", "Update", "Quantity", 0, 0);
+                listViewWine.SelectedItems[0].SubItems[3].Text = input.ToString();
+            }
+        }
+
+        private void delete()
+        {
+            if (MessageBox.Show("Are you sure you want to Delete?", "Delete",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                == DialogResult.OK)
+            {
+                listViewWine.Items.RemoveAt(listViewWine.SelectedIndices[0]);
             }
         }
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            int i = lstInventoryBox.SelectedIndex;
-            if (i != -1)
-            {
-                Product product = products[i];
-                string message = "Are you sure you want to delete " + product.ProductName + "?";
-                DialogResult button = MessageBox.Show(message, "Confirm Delete",
-                    MessageBoxButtons.YesNoCancel);
-                if (button == DialogResult.Yes)
-                {
-                    products.Remove(product);
-                    FillProductListBox();
-                }
-            }
+            delete();
+           
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             Close();
         }
+
+       
     }
 }

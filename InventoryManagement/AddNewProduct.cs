@@ -32,6 +32,8 @@ namespace InventoryManagement
                 product = new Product(txtProduct.Text, Convert.ToInt32(txtYear.Text), Convert.ToDecimal(txtPrice.Text),
                     Convert.ToInt32(txtQuantity.Text));
                 this.Close();
+
+                
             }
         }
 
