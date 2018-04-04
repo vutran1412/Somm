@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Somm
+// Author: Vu Tran
+// This is a wine inventory management application
+
 namespace InventoryManagement
 {
     public partial class frmWineCellar : Form
@@ -16,6 +20,8 @@ namespace InventoryManagement
         {
             InitializeComponent();
 
+            // Learned how to use Listview on 
+            // https://www.youtube.com/watch?v=vtzAF42lSYE
             listViewWine.View = View.Details;
             listViewWine.FullRowSelect = true;
 
@@ -66,6 +72,11 @@ namespace InventoryManagement
                 MessageBox.Show("Please select a product to edit");
             } else
             {
+                // Learned about how to implement a input dialog on 
+                // https://stackoverflow.com/questions/7883522/input-dialogs-in-c-sharp
+                // I wanted to see if there was a JOptionpane equivalent in C#
+                // Unfortunately there isn't one
+                // Had to reference VisualBasic's Interaction InputBox
                 String input = Microsoft.VisualBasic.Interaction.InputBox("Update Quantity", "Update", "Quantity", 0, 0);
                 listViewWine.SelectedItems[0].SubItems[3].Text = input.ToString();
             }

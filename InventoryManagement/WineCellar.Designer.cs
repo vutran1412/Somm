@@ -50,7 +50,7 @@
             // btnAddNewProduct
             // 
             this.btnAddNewProduct.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAddNewProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewProduct.Location = new System.Drawing.Point(178, 12);
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             this.btnAddNewProduct.Size = new System.Drawing.Size(133, 73);
@@ -62,7 +62,7 @@
             // btnDeleteProduct
             // 
             this.btnDeleteProduct.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDeleteProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProduct.Location = new System.Drawing.Point(178, 91);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(133, 73);
@@ -74,7 +74,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(315, 91);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(133, 73);
@@ -86,6 +86,7 @@
             // listViewWine
             // 
             this.listViewWine.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.listViewWine.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewWine.Location = new System.Drawing.Point(12, 170);
             this.listViewWine.Name = "listViewWine";
             this.listViewWine.Size = new System.Drawing.Size(436, 342);
@@ -95,7 +96,7 @@
             // btnUpdateProduct
             // 
             this.btnUpdateProduct.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnUpdateProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProduct.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProduct.Location = new System.Drawing.Point(317, 12);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(133, 73);
